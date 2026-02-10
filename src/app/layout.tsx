@@ -16,13 +16,13 @@ import { getAssetPath } from "@/lib/utils";
 
 export const metadata: Metadata = {
   title: "Subway Takes",
-  description: "Social media sensation and SNL host Veronika Slowikowska desperately wishes for one thing: to be on Subway Takes.",
+  description: "Social media sensation Veronika Slowikowska brings her viral 'Subway Takes' to the screen.",
   icons: {
     icon: getAssetPath("/icon.svg"),
   },
   openGraph: {
     title: "Subway Takes",
-    description: "Social media sensation and SNL host Veronika Slowikowska desperately wishes for one thing: to be on Subway Takes.",
+    description: "Social media sensation Veronika Slowikowska brings her viral 'Subway Takes' to the screen.",
     url: "https://rommelnunez.github.io/subway-takes/",
     siteName: "Subway Takes",
     images: [
