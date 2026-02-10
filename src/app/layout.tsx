@@ -20,6 +20,22 @@ export const metadata: Metadata = {
   icons: {
     icon: getAssetPath("/icon.svg"),
   },
+  openGraph: {
+    title: "Subway Takes",
+    description: "Social media sensation Veronika Slowikowska brings her viral 'Subway Takes' to the screen.",
+    url: "https://rommelnunez.github.io/subway-takes/",
+    siteName: "Subway Takes",
+    images: [
+      {
+        url: "https://rommelnunez.github.io/subway-takes/headerimage.png",
+        width: 1200,
+        height: 630,
+        alt: "Subway Takes with Veronika Slowikowska",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
 };
 
 export default function RootLayout({
