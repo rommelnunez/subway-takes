@@ -1,5 +1,6 @@
 import { Play, Info } from "lucide-react";
 import { showMetadata } from "@/lib/data";
+import { getAssetPath } from "@/lib/utils";
 
 interface HeroProps {
     onPlay: () => void;
@@ -13,7 +14,7 @@ export default function Hero({ onPlay }: HeroProps) {
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
-                        backgroundImage: 'url("/headerimage.png")',
+                        backgroundImage: `url("${getAssetPath('/headerimage.png')}")`,
                     }}
                 >
                     <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/50 to-transparent" />
@@ -76,6 +77,6 @@ export default function Hero({ onPlay }: HeroProps) {
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 }
