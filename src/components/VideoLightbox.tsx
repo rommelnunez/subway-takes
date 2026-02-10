@@ -31,7 +31,7 @@ export default function VideoLightbox({ episode, onClose, onNext, hasNext }: Vid
                 <X size={40} />
             </button>
 
-            <div className="relative w-full max-w-[400px] md:max-w-[500px] aspect-[9/16] max-h-[90vh] flex flex-col items-center shadow-2xl">
+            <div className="relative w-full max-w-[85vw] md:max-w-[500px] aspect-[9/16] max-h-[80vh] flex flex-col items-center shadow-2xl">
                 <iframe
                     src={getEmbedUrl(episode.instagramUrl)}
                     className="w-full h-full rounded bg-black"
@@ -39,14 +39,15 @@ export default function VideoLightbox({ episode, onClose, onNext, hasNext }: Vid
                     allowFullScreen
                 ></iframe>
 
-                {/* Manual Skip Button */}
+                {/* Manual Skip Button - Right side on Desktop, Bottom Right on Mobile */}
                 {hasNext && (
                     <button
                         onClick={onNext}
-                        className="absolute -right-20 top-1/2 -translate-y-1/2 text-white/50 hover:text-[#e9c46a] transition-colors hidden md:block" // Added gold hover
+                        className="absolute -bottom-16 md:bottom-auto md:top-1/2 md:-right-20 md:-translate-y-1/2 text-white/70 hover:text-[#e9c46a] transition-colors md:block flex flex-col items-center gap-1"
                         title="Next Episode"
                     >
-                        <SkipForward size={48} />
+                        <SkipForward size={40} className="md:w-12 md:h-12" />
+                        <span className="text-xs md:hidden uppercase tracking-widest font-bold">Next</span>
                     </button>
                 )}
             </div>

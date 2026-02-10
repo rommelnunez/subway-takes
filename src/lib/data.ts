@@ -34,7 +34,7 @@ export const episodes: Episode[] = [
     title: "Episode 2",
     description: "so it begins…",
     thumbnail: getAssetPath("/episodes/ep2.jpg"),
-    instagramUrl: "https://www.instagram.com/reels/DUQ9lgJDWmB/",
+    instagramUrl: "https://www.instagram.com/reel/DUQ9lgJDWmB/",
     duration: "1m",
   },
   {
