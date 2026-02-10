@@ -7,7 +7,7 @@ interface EpisodeListProps {
 
 export default function EpisodeList({ onPlay }: EpisodeListProps) {
     return (
-        <div className="relative z-20 -mt-24 md:-mt-48 pl-16 md:pl-24 overflow-visible pb-20">
+        <div className="relative z-20 -mt-24 md:-mt-48 pl-20 md:pl-32 overflow-visible pb-20">
 
             {/* Selection Header - "Trending Now" style but using Season info */}
             <h2 className="text-xl md:text-2xl font-bold text-white mb-4 drop-shadow-md">

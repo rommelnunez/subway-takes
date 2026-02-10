@@ -22,7 +22,7 @@ export default function Hero({ onPlay }: HeroProps) {
                 </div>
             </div>
 
-            <div className="relative z-10 w-full h-full flex flex-col justify-center px-8 md:px-24">
+            <div className="relative z-10 w-full h-full flex flex-col justify-center pl-20 pr-8 md:pl-32 md:pr-12">
                 <div className="max-w-2xl space-y-4 md:space-y-6 mt-16">
 
                     {/* Custom SVG Logo */}
