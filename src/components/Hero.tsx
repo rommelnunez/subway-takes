@@ -44,7 +44,7 @@ export default function Hero({ onPlay }: HeroProps) {
                             <span>TOP</span>
                             <span className="leading-none text-[10px]">10</span>
                         </div>
-                        <span className="font-bold text-xl md:text-2xl text-white drop-shadow-lg">#1 in TV Shows Today</span>
+                        <span className="font-bold text-xl md:text-2xl text-white drop-shadow-lg">#8 in Social Shows Today</span>
                     </div>
 
                     {/* Description */}
