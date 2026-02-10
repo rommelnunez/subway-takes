@@ -2,6 +2,7 @@
 
 import { X, SkipForward } from "lucide-react";
 import { Episode } from "@/lib/data";
+import { useEffect } from "react";
 
 interface VideoLightboxProps {
     episode: Episode;
@@ -22,7 +23,6 @@ export default function VideoLightbox({ episode, onClose, onNext, hasNext }: Vid
     };
 
     // Load Instagram embed script if needed
-    import { useEffect } from "react";
 
     useEffect(() => {
         if (episode.embedHtml) {
