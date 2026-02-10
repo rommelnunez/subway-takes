@@ -1,9 +1,8 @@
 /** @type {import('next').NextConfig} */
-const isProd = process.env.NODE_ENV === 'production';
-
+console.log("Loading next.config.mjs");
 const nextConfig = {
   output: "export",
-  basePath: isProd ? "/subway-takes" : "",
+  basePath: "/subway-takes",
   images: {
     unoptimized: true,
   },
