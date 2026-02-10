@@ -12,11 +12,13 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+import { getAssetPath } from "@/lib/utils";
+
 export const metadata: Metadata = {
   title: "Subway Takes",
   description: "Social media sensation Veronika Slowikowska brings her viral 'Subway Takes' to the screen.",
   icons: {
-    icon: "/icon.svg",
+    icon: getAssetPath("/icon.svg"),
   },
 };
 
