@@ -21,6 +21,25 @@ export default function VideoLightbox({ episode, onClose, onNext, hasNext }: Vid
         return `https://www.instagram.com/p/${id}/embed/?autoplay=1`;
     };
 
+    // Load Instagram embed script if needed
+    import { useEffect } from "react";
+
+    useEffect(() => {
+        if (episode.embedHtml) {
+            // Check if script is already present
+            if (!document.querySelector('script[src="//www.instagram.com/embed.js"]')) {
+                const script = document.createElement("script");
+                script.src = "//www.instagram.com/embed.js";
+                script.async = true;
+                document.body.appendChild(script);
+            }
+            // Trigger process for new embeds
+            if ((window as any).instgrm) {
+                (window as any).instgrm.Embeds.process();
+            }
+        }
+    }, [episode]);
+
     return (
         <div className="fixed inset-0 z-[100] flex items-center justify-center bg-black/95 backdrop-blur-sm animate-in fade-in duration-300">
             {/* Close Button */}
@@ -31,13 +50,20 @@ export default function VideoLightbox({ episode, onClose, onNext, hasNext }: Vid
                 <X size={40} />
             </button>
 
-            <div className="relative w-full max-w-[85vw] md:max-w-[500px] aspect-[9/16] max-h-[80vh] flex flex-col items-center shadow-2xl">
-                <iframe
-                    src={getEmbedUrl(episode.instagramUrl)}
-                    className="w-full h-full rounded bg-black"
-                    allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
-                    allowFullScreen
-                ></iframe>
+            <div className="relative w-full max-w-[85vw] md:max-w-[500px] aspect-[9/16] max-h-[80vh] flex flex-col items-center shadow-2xl justify-center">
+                {episode.embedHtml ? (
+                    <div
+                        className="w-full h-full overflow-y-auto custom-embed-container flex items-center justify-center bg-black rounded"
+                        dangerouslySetInnerHTML={{ __html: episode.embedHtml }}
+                    />
+                ) : (
+                    <iframe
+                        src={getEmbedUrl(episode.instagramUrl)}
+                        className="w-full h-full rounded bg-black"
+                        allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share"
+                        allowFullScreen
+                    ></iframe>
+                )}
 
                 {/* Manual Skip Button - Right side on Desktop, Bottom Right on Mobile */}
                 {hasNext && (
